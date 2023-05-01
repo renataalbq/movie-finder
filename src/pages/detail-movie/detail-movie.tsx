@@ -81,10 +81,10 @@ export const MovieDetailPage = () => {
             <CastText>Cast:</CastText>
             <HView center style={{flexWrap: 'wrap'}}>
               {credits.slice(0, 6).map((actor) => (
-                <>
-                  <InfoDescription key={actor.id}>{actor.name}</InfoDescription>
+                <React.Fragment key={actor.id}>
+                  <InfoDescription>{actor.name}</InfoDescription>
                   <HSeparator />
-                </>
+                </React.Fragment>
               ))}
             </HView>
           </View>

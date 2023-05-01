@@ -1,6 +1,10 @@
+import { Platform, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 
+const isAndroid = Platform.OS === "android";
+
 export const HeaderWrapper = styled.View`
+  margin-top: ${isAndroid ? `${StatusBar.currentHeight}px` : '0'};
 `;
 
 export const Title = styled.Text`
