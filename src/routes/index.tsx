@@ -2,6 +2,7 @@ import React from 'react';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import { StackRoutes } from './stack-routes';
 import { FavoritesProvider } from '../store/fav-context';
+import { UserProvider } from '../store/user-context';
 
 const Theme = {
   ...DefaultTheme,
@@ -12,12 +13,13 @@ const Theme = {
 }
 
 export const AppRoutes = () => {
-
   return (
-    <FavoritesProvider>
-      <NavigationContainer theme={Theme}>
-        <StackRoutes />
-      </NavigationContainer>
-   </FavoritesProvider>
+    <UserProvider>
+      <FavoritesProvider>
+        <NavigationContainer theme={Theme}>
+            <StackRoutes />
+        </NavigationContainer>
+    </FavoritesProvider>
+   </UserProvider>
   );
 };

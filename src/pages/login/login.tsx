@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {signInWithEmailAndPassword } from "firebase/auth";
 import { Container, WelcomeContent, WelcomeMainText, WelcomeText } from './login.style';
 import { useNavigation } from '@react-navigation/native';
-import { app, auth } from '../../services/firebase';
+import { auth } from '../../services/firebase';
 import { Form } from '../../components/form/form';
-import { Text, View } from 'react-native';
+import { UserContext } from '../../store/user-context';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -12,11 +12,13 @@ export const LoginPage = () => {
   const [error, setError] = useState(false); 
   const navigation = useNavigation();
   const [messageError, setMessageError] = useState('');
-  
+  const { login } = useContext(UserContext);
+
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        login(user);
         navigation.navigate('Home')
       })
       .catch((error) => {
@@ -25,7 +27,6 @@ export const LoginPage = () => {
         const errorMessage = error.message;
         setMessageError(errorMessage)
       });
-
   };
 
   const handleSignUp = () => {

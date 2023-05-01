@@ -11,7 +11,7 @@ import { filterByGenre, getMovies } from '../../services/api';
 import { searchFilter } from '../../utils/search-function';
 import {  SearchContainer, SearchIcon} from './home.style';
 
-export const MoviesPage = () => {
+export const HomePage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [search, setSearch] = React.useState<string>('');
   const [moviesSearched, setMoviesSearched] = useState<Movie[]>([]);

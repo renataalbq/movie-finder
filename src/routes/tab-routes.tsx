@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { MoviesPage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
 import { FavoriteMovie } from '../pages/favorite-movie/favorite-movie';
 import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -24,7 +24,7 @@ export const TabRoutes = () => {
 
         <Tab.Screen
           name="HomePage"
-          component={MoviesPage}
+          component={HomePage}
           options={{
             tabBarIcon: ({focused}) => (
               <MaterialIcons
