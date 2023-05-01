@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { FlatList, SafeAreaView, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { FavoriteButton } from '../../components/favorite/favorite-button.component';
 import { useNavigation } from '@react-navigation/native';
 import { PosterMovie } from '../../components/poster-movie/poster-movie';
-import { Placeholder, Title } from './favorite-movie.style';
+import { Placeholder } from './favorite-movie.style';
 import { FavoritesContext } from '../../store/fav-context';
 import { Header } from '../../components/header/header';
 import { Container, VSeparator, VView } from '../../components/layout/layout';

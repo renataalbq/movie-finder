@@ -7,7 +7,6 @@ import { ButtonLogout, Content, Setting, SettingsOption, TextLogoutButton, Title
 import { Header } from '../../components/header/header';
 import { Divider } from '../../components/header/header.style';
 
-
 export const SettingsPage = () => {
   const navigation = useNavigation();
   const [isAlphaOrder, setIsAlphaOrder] = useState(false);
@@ -50,7 +49,7 @@ export const SettingsPage = () => {
             <VSeparator />
             <Divider />
             <VSeparator />
-            <VView center>
+            <VView hAlign='center'>
               <ButtonLogout onPress={handleLogout}>
                   <TextLogoutButton>Logout</TextLogoutButton>
               </ButtonLogout> 
