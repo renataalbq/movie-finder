@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import {signInWithEmailAndPassword } from "firebase/auth";
-import { Container, WelcomeContent, WelcomeMainText, WelcomeText } from './login.style';
+import { Container, Content, WelcomeMainText, WelcomeText } from './login.style';
 import { useNavigation } from '@react-navigation/native';
 import { auth } from '../../services/firebase';
 import { Form } from '../../components/form/form';
@@ -35,16 +35,16 @@ export const LoginPage = () => {
 
   return (
     <Container>
-      <WelcomeContent>
+      <Content>
         <WelcomeText>Welcome to </WelcomeText>
         <WelcomeMainText>MovieFinder</WelcomeMainText>
-      </WelcomeContent>
-      <Form setEmail={setEmail} email={email} 
+        <Form setEmail={setEmail} email={email} 
             setPassword={setPassword} password={password} 
             primaryButton="Login" secondaryButton="Register"
             secondaryText="Don't have an account?" 
             handlePrimaryFunction={handleLogin } handleSecondaryFunction={handleSignUp}
             error={error} messageError={messageError} />
+      </Content>
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Container } from './signup.style';
+import { Container, Content } from './signup.style';
 import { useNavigation } from '@react-navigation/native';
 import { auth } from '../../services/firebase';
 import { Form } from '../../components/form/form';
@@ -33,15 +33,17 @@ export const SignUpPage = () => {
 
   return (
     <Container>
-      <Form title="Sign Up" setEmail={setEmail} email={email} 
-            setPassword={setPassword} password={password} 
-            primaryButton="Register" secondaryButton="Login"
-            secondaryText="Already register?" 
-            handlePrimaryFunction={handleSignUp}
-            handleSecondaryFunction={handleLogin}
-            messageError={messageError}
-            error={error}
-             />
+      <Content>
+        <Form title="Sign Up" setEmail={setEmail} email={email} 
+              setPassword={setPassword} password={password} 
+              primaryButton="Register" secondaryButton="Login"
+              secondaryText="Already register?" 
+              handlePrimaryFunction={handleSignUp}
+              handleSecondaryFunction={handleLogin}
+              messageError={messageError}
+              error={error}
+        />
+      </Content>
     </Container>
   );
 };

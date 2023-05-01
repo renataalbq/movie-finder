@@ -7,10 +7,10 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Content = styled.View`
-  padding: 0 24px 24px 24px;
-  flex: 1;
+  gap: 15px;
   align-items: center;
   justify-content: center;
+  margin-top: 24px;
 `
 
 export const ButtonContainer = styled.TouchableOpacity`

@@ -23,7 +23,7 @@ interface FormProps{
 export const Form: React.FC<FormProps> = (props) => {
     return (
       <Content>
-        <Title>{props.title}</Title>
+        {props.title && <Title>{props.title}</Title>}
         <VSeparator />
         <Input
           placeholder="Email"
