@@ -2,18 +2,19 @@ import { API_KEY_TMDB } from "../env";
 
 export const base_URL = 'https://api.themoviedb.org/3';
 
-export const getMovies = (setGenres: any) => {
+export const getMovies = (setGenres: any, setIsLoading: any) => {
     fetch(`${base_URL}/genre/movie/list?api_key=${API_KEY_TMDB}`)
         .then(response => response.json())
         .then(data => {
           setGenres(data.genres);
+          setIsLoading(false);
         })
         .catch(error => {
         console.error(error);
     });
 }
 
-export const filterByGenre = (selectedGenreId: any, setMovies: any, setMoviesSearched: any) => {
+export const filterByGenre = (selectedGenreId: any, setMovies: any, setMoviesSearched: any, setIsLoading: any) => {
     let url = `${base_URL}/discover/movie?api_key=${API_KEY_TMDB}`;
     if (selectedGenreId) {
         url += `&with_genres=${selectedGenreId}`;
@@ -23,6 +24,7 @@ export const filterByGenre = (selectedGenreId: any, setMovies: any, setMoviesSea
         .then(data => {
           setMovies(data.results);
           setMoviesSearched(data.results)
+          setIsLoading(false);
         })
         .catch(error => {
           console.error(error);

@@ -8,6 +8,7 @@ import { FavoriteButton } from '../../components/favorite/favorite-button.compon
 import { ButtonsContainer, CastText, Container, InfoDescription, InfoTitle, InfoWrapper, Overview,Poster, Title, TitleContent } from './detail-movie.style';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Header } from '../../components/header/header';
+import { Loading } from '../../components/loading/loading';
 
 interface Movie {
   id: number;
@@ -41,11 +42,10 @@ export const MovieDetailPage = () => {
 
   if (isLoading) {
     return (
-      <View>
-        <Text>Loading...</Text>
-      </View>
+      <Loading />
     );
   }
+
   return (
     <ScrollView>
       <Header title="Movie Detail" back onBackButton={handleGoBack} />

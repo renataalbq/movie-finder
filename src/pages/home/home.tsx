@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, SafeAreaView } from 'react-native';
 import { Genres } from '../../components/genres/genres';
 import { Header } from '../../components/header/header';
+import { Loading } from '../../components/loading/loading';
 import { PosterMovie } from '../../components/poster-movie/poster-movie';
 import { Search } from '../../components/search/search';
 import { Movie } from '../../models/movie.model';
@@ -17,14 +18,15 @@ export const HomePage = () => {
   const [moviesSearched, setMoviesSearched] = useState<Movie[]>([]);
   const [genres, setGenres] = useState([]);
   const [selectedGenreId, setSelectedGenreId] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation();
 
   useEffect(() => {
-    getMovies(setGenres)
+    getMovies(setGenres, setIsLoading)
   }, []);
 
   useEffect(() => {
-    filterByGenre(selectedGenreId, setMovies, setMoviesSearched)
+    filterByGenre(selectedGenreId, setMovies, setMoviesSearched, setIsLoading)
   }, [selectedGenreId]);
 
   const handleMovieDetail = (id: number, title: string) => {
@@ -33,6 +35,12 @@ export const HomePage = () => {
 
   const handleGenreSelected = (genreId: any) => {
     setSelectedGenreId(genreId);
+  }
+
+  if (isLoading) {
+    return (
+      <Loading />
+    );
   }
 
   return (
