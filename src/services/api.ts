@@ -1,4 +1,5 @@
-import { API_KEY_TMDB } from "@env";
+// @ts-ignore
+import { API_KEY_TMDB } from 'react-native-dotenv';
 
 export const base_URL = 'https://api.themoviedb.org/3';
 

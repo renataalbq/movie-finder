@@ -1,4 +1,5 @@
-import { APP_ID, AUTH_DOMAIN, FIREBASE_API_KEY, MESSAGING_SENDER_ID, PROJECT_ID, STORAGE_BUCKET } from "@env";
+// @ts-ignore
+import { FIREBASE_API_KEY, AUTH_DOMAIN,PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID,APP_ID } from 'react-native-dotenv';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
