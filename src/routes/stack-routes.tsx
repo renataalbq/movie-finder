@@ -19,7 +19,8 @@ export const StackRoutes = () => {
     headerTintColor: '#FF5523',
   }}>
     <Stack.Screen name="Home" component={TabRoutes} />
-    <Stack.Screen name="MovieDetail" component={MovieDetailPage} options={{ headerShown: true, title: 'Movie Detail', presentation: 'modal'}} />
+    <Stack.Screen name="MovieDetail" component={MovieDetailPage} 
+    options={{ headerShown: true, title: 'Movie Detail', presentation: 'modal'}} />
     {!logged &&
       <>
         <Stack.Screen name="Login" component={LoginPage} />

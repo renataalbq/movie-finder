@@ -11,8 +11,7 @@ interface ViewProps {
 export const Container = styled.SafeAreaView`
     flex: 1;
     background-color:#190c38;
-    padding: 10px;
-    margin-top: ${isAndroid ? `${StatusBar.currentHeight}px` : '0'};
+    margin-top: ${isAndroid ? '5px' : '0'};
 `;
 
 export const HView = styled.View<ViewProps>`

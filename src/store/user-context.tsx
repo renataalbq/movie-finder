@@ -11,7 +11,7 @@ export const UserContext = createContext({
 export const UserProvider = ({ children }) => {
   const [logged, setLogged] = useState(false);
   const [user, setUser] = useState(null);
-  console.log(logged);
+
   useEffect(() => {
     AsyncStorage.getItem('user').then((data) => {
       if (data) {
