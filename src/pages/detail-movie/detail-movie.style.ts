@@ -54,11 +54,6 @@ export const Overview = styled.Text`
     text-align: justify;
 `;
 
-export const InfoContainer = styled.View`
-  align-items: center;
-  justify-content: center;
-`;
-
 export const InfoTitle = styled.Text`
     font-size: 12px;
     font-weight: bold;

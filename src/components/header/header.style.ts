@@ -7,6 +7,11 @@ export const HeaderWrapper = styled.View`
   margin-top: ${isAndroid ? `${StatusBar.currentHeight}px` : '0'};
 `;
 
+export const Row = styled.View`
+  flex-direction: row;
+  justify-content: center;
+`
+
 export const Title = styled.Text`
     color: #fff;
     text-align: center;

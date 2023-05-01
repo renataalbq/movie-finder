@@ -20,7 +20,8 @@ export const StackRoutes = () => {
   }}>
     <Stack.Screen name="Home" component={TabRoutes} />
     <Stack.Screen name="MovieDetail" component={MovieDetailPage} 
-    options={{ headerShown: true, title: 'Movie Detail', presentation: 'modal'}} />
+    options={{ presentation: 'modal'}} />
+
     {!logged &&
       <>
         <Stack.Screen name="Login" component={LoginPage} />
